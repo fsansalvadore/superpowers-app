@@ -1,0 +1,12 @@
+<h1>SUPER HOME PAGE 🤟</h1>
+
+
+<% if !@superpowers.empty? %>
+  <ul>
+    <% @superpowers.each do |superpower| %>
+      <li>Superpower id: <%= superpower.id %> | Name: <%= !superpower.name.nil? ? superpower.name : 'n/a' %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No Superpowers in the DB</p>
+<% end %>
