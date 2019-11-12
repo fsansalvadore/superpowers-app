@@ -1,0 +1,87 @@
+.card-container {
+  height: 280px;
+  display: flex;
+  width: 360px;
+  background-color: #0E1A61;
+  flex-direction: column;
+  border-radius: 6px;
+  box-shadow: 0 0 0 rgba(253, 189, 46, 1);
+  transition: all 0.2s ease-in-out;
+}
+
+.card-container:hover {
+  box-shadow: -10px 10px 0 rgba(253, 189, 46, 1);
+  transform: translate(10px, -10px);
+
+}
+
+.card-img {
+  height: 200px;
+  width: 100%;
+  background-color: green;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card-price {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: #FDBD2E;
+  padding: 18px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 21px;
+  font-weight: bold;
+  color: $white;
+
+  font-family: 'Carter One', cursive;
+
+  p {
+    padding: 0;
+    margin: 0;
+
+    span {
+      font-size: 16px;
+    }
+  }
+}
+
+.card-text {
+  height: 100px;
+  font: 21px;
+  color: $white;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  padding-left: 20px;
+
+}
+
+h3 {
+
+  font-family: 'Carter One', cursive;
+}
+
+.category-container {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  color: white;
+  align-items: center;
+  padding: 0 0 15px 15px;
+
+  img {
+    height: 35px;
+    width: 35px;
+
+  }
+
+  p {
+    padding-left: 10px;
+    margin: 0;
+  }
+}
