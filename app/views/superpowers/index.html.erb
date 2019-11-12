@@ -4,7 +4,10 @@
 <% if !@superpowers.empty? %>
   <ul>
     <% @superpowers.each do |superpower| %>
-      <li>Superpower id: <%= superpower.id %> | Name: <%= !superpower.name.nil? ? superpower.name : 'n/a' %></li>
+      <li>Superpower id: <%= superpower.id %> | Name: <%= !superpower.name.nil? ? superpower.name : 'n/a' %>
+        <%= link_to "View", superpower_path(superpower)  %>
+
+      </li>
     <% end %>
   </ul>
 <% else %>
