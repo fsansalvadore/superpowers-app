@@ -2,24 +2,24 @@
 
 <p><%= @superpower.description %></p>
 
-<p>Owner first name: <%= @superpower.user.first_name %></p>
-<p>Owner last name: <%= @superpower.user.last_name %></p>
+<p>Owner first name: <%= @superpower.owner.first_name %></p>
+<p>Owner last name: <%= @superpower.owner.last_name %></p>
 
 <p>Price: <%= @superpower.price %> DKK a day</p>
 
-<p>Superpower type: <%= @superpower.superpower_categories.name %></p>
+<p>Superpower type: <%= @superpower.superpower_category.name %></p>
 
-<p>Superpower icon: <%= cl_image_tag @superpower_category.icon %></p>
+<p>Superpower icon: <%= cl_image_tag @superpower.superpower_category.icon %></p>
 
 <%= cl_image_tag @superpower.image %>
 
 <h5>Book this superpower</h5>
 
-<%= simple_form_for [@superpower, @booking] do |b| %>
-<%= b.input :start_date, as: "string" %>
-<%= f.input :number_of_days %>
-<%= b.button :submit%>
-<% end %>
+<%#= simple_form_for [@superpower, @booking] do |b| %>
+<%#= b.input :start_date, as: "string" %>
+<%#= f.input :number_of_days %>
+<%#= b.button :submit%>
+<%# end %>
 
 <%#= link_to "Book now", new_superpower_booking_path(@superpower) %>
 
