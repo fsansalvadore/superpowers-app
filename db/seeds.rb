@@ -36,9 +36,7 @@ puts "Creating users..."
   end
 puts "Finished creating users..."
 
-
 puts "Creating superpowers..."
-
   superpower_images = ["https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1505224959304-f6daf7fd0559_dxpogr.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553358/superhero_app_seed/photo-1572883023704-baadd8d6a976_vdyimi.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1531259683007-016a7b628fc3_mbcijc.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1496850574977-a4607106a874_xykd4u.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1519741347686-c1e0aadf4611_mtmynp.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1551981878-4c70c3e64135_p2hjps.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1534445967719-8ae7b972b1a5_wu1fag.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1535648451240-482a0bbd6e02_o3zbez.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1569003339405-ea396a5a8a90_hlus2s.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1534809027769-b00d750a6bac_c2sxba.jpg"]
 
   superpower_attributes = []
@@ -46,7 +44,7 @@ puts "Creating superpowers..."
   10.times do |index|
     superpower_attributes << {
       name: "#{Faker::Superhero.power}",
-      description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
+      description: Faker::Lorem.paragraph(sentence_count: 4, supplemental: false, random_sentences_to_add: 4),
       image: superpower_images[index],
       price: rand(100..1000)
     }
@@ -58,48 +56,23 @@ puts "Creating superpowers..."
     superpower.superpower_category = SuperpowerCategory.all.sample
     superpower.save!
   end
-
-
-  # Superpower.all.each do |superpower|
-
-  #   p superpower
-
-  # end
-    #   t.bigint "owner_id"
-    #   t.bigint "superpower_category_id"
-
-
-  #SAVE ALL
-
-
-
-
-
 puts "Finished creating superpowers..."
 
-
 puts "Creating bookings..."
+  booking_attributes = []
+
+  10.times do
+    booking_attributes << {
+      start_date: Faker::Date.between(from: 10.days.ago, to: 10.days.from_now),
+      end_date: Faker::Date.between(from: 11.days.from_now, to: 20.days.from_now)
+    }
+  end
+
+  booking_attributes.each do |attribute|
+    booking = Booking.new(attribute)
+    booking.rentee = User.all.sample
+    booking.superpower = Superpower.all.sample
+    booking.save!
+  end
 puts "Finished creating bookings..."
 
-
-
-
-
-# flat_attributes = []
-
-# adjectives = %W(Lovely Charming Nice Beautiful Ugly Nasty Filthy Dirty Wonderful Inspirational)
-
-# puts 'Creating 10 valid flats...'
-# 10.times do
-#   flat_attributes << {
-#     name: "#{adjectives.sample} apartment in #{Faker::Address.city}",
-#     address: Faker::Address.full_address,
-#     description: Faker::Lorem.paragraph(sentence_count: 10, supplemental: false, random_sentences_to_add: 4),
-#     price_per_night: rand(100...1000),
-#     number_of_guests: rand(0..10),
-#     picture_url: "https://source.unsplash.com/800x600/?apartment,#{adjectives.sample}"
-#   }
-# end
-
-# Flat.create!(flat_attributes)
-# puts 'Finished creating 10 valid flats!'
