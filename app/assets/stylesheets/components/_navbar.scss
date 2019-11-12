@@ -10,3 +10,36 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar {
+  background: #0E1A61;
+}
+
+.right-nav-container a {
+  padding: 10px 30px;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 13px;
+}
+
+.right-nav-container {
+  display: flex;
+  align-items: center;
+}
+
+#login-btn {
+  border: 1px solid $main-color;
+  color: $main-color;
+}
+
+.main-btn {
+  background-color: $main-color;
+  color: white;
+}
+
+.login-name-text {
+  color:#FDBD2E;
+}
+
+

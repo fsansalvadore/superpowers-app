@@ -9,5 +9,6 @@ Rails.application.routes.draw do
 
   get '/profile', to: 'users#show', as: 'profile'
   get "design", to: "pages#design"
+
 end
 
