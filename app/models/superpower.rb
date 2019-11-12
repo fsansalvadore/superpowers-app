@@ -6,8 +6,10 @@ class Superpower < ApplicationRecord
   validates :name, :description, :image, :price, presence: true
   validates :name, uniqueness: true
 
-  mount_uploader :photo, PhotoUploader
-  mount_uploader :tumbnail, PhotoUploader
+  validates_numericality_of :price, :greater_than => 0.0
+
+  mount_uploader :image, PhotoUploader
+  # mount_uploader :tumbnail, PhotoUploader
 
   # To be completed with a through relationship
   # has_many :users, through: :bookings, :foreign_key => 'rentee_id', :class_name => 'User'
