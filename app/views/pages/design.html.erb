@@ -1,0 +1,7 @@
+<h4>Category icons for reference</h4>
+<ul>
+  <% Dir.glob("#{Rails.root}/app/assets/images/categories/*") do |icon| %>
+      <li><%= image_tag "/assets/images/categories/#{File.basename(icon)}" %>
+      </li>
+  <% end %>
+</ul>

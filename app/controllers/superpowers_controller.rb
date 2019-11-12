@@ -12,5 +12,4 @@ class SuperpowersController < ApplicationController
     @superpower_category = @superpower_categories.superpower
     @booking = Booking.new
   end
-
 end
