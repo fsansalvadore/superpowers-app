@@ -40,6 +40,9 @@ puts "Creating users..."
       password: Faker::String.random(length: [6, 12])
       )
   end
+  #C/P below to create your own user
+  User.create!(email: "a@b.com", first_name: "Axel", last_name: "Abildtrup", password: "123456")
+
 puts "Finished creating users..."
 
 puts "Creating superpowers..."
@@ -49,7 +52,7 @@ puts "Creating superpowers..."
 
   10.times do |index|
     superpower_attributes << {
-      name: "#{Faker::Superhero.power}",
+      name: "##{index} #{Faker::Superhero.power}",
       description: Faker::Lorem.paragraph(sentence_count: 4, supplemental: false, random_sentences_to_add: 4),
       price: rand(100..1000)
     }
