@@ -1,0 +1,18 @@
+<%= simple_form_for @superpower do |f| %>
+   <% if @superpower.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @superpower.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.association :superpower_category %>
+  <%= f.input :price %>
+  <%= f.input :image %>
+  <%= f.input :image_cache, as: :hidden %>
+  <%= f.submit 'Create superpower', class: 'btn btn-primary' %>
+<% end %>
