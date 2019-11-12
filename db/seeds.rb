@@ -3,6 +3,12 @@ puts "Destroying bookings..."
 Booking.destroy_all
 
 puts "Destroying superpowers..."
+
+puts "Deleting user uploaded photos from Cloudinary"
+Superpower.all.each do |superpower|
+  superpower.image.file.delete
+end
+
 Superpower.destroy_all
 
 puts "Destroying superpower categories..."
@@ -45,17 +51,11 @@ puts "Creating superpowers..."
     superpower_attributes << {
       name: "#{Faker::Superhero.power}",
       description: Faker::Lorem.paragraph(sentence_count: 4, supplemental: false, random_sentences_to_add: 4),
-      # image: superpower_images[index],
       price: rand(100..1000)
     }
   end
 
-#   url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png"
-# article = Article.new(title: 'NES', body: "A great console")
-# article.remote_photo_url = url
-# article.save
-
-  superpower_attributes.each do |attribute, index|
+  superpower_attributes.each_with_index do |attribute, index|
     superpower = Superpower.new(attribute)
     superpower.owner = User.all.sample
     superpower.superpower_category = SuperpowerCategory.all.sample
