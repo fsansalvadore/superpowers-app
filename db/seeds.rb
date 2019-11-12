@@ -38,6 +38,43 @@ puts "Finished creating users..."
 
 
 puts "Creating superpowers..."
+
+  superpower_images = ["https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1505224959304-f6daf7fd0559_dxpogr.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553358/superhero_app_seed/photo-1572883023704-baadd8d6a976_vdyimi.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1531259683007-016a7b628fc3_mbcijc.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1496850574977-a4607106a874_xykd4u.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1519741347686-c1e0aadf4611_mtmynp.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1551981878-4c70c3e64135_p2hjps.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1534445967719-8ae7b972b1a5_wu1fag.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1535648451240-482a0bbd6e02_o3zbez.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1569003339405-ea396a5a8a90_hlus2s.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1534809027769-b00d750a6bac_c2sxba.jpg"]
+
+  superpower_attributes = []
+
+  10.times do |index|
+    superpower_attributes << {
+      name: "#{Faker::Superhero.power}",
+      description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 2),
+      image: superpower_images[index],
+      price: rand(100..1000)
+    }
+  end
+
+  superpower_attributes.each do |attribute|
+    superpower = Superpower.new(attribute)
+    superpower.owner = User.all.sample
+    superpower.superpower_category = SuperpowerCategory.all.sample
+    superpower.save!
+  end
+
+
+  # Superpower.all.each do |superpower|
+
+  #   p superpower
+
+  # end
+    #   t.bigint "owner_id"
+    #   t.bigint "superpower_category_id"
+
+
+  #SAVE ALL
+
+
+
+
+
 puts "Finished creating superpowers..."
 
 
