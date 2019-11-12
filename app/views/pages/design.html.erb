@@ -1,2 +1,7 @@
-design.html.erb
-
+<h4>Category icons for reference</h4>
+<ul>
+  <% Dir.glob("#{Rails.root}/app/assets/images/categories/*.png") do |icon| %>
+      <% icon_base = File.basename(icon) %>
+      <li><%= link_to icon_base, image_url(icon_base) %></li>
+  <% end %>
+</ul>
