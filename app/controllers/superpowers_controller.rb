@@ -17,12 +17,8 @@ class SuperpowersController < ApplicationController
 
   # POST /superpowers
   def create
-
     @superpower = Superpower.new(superpower_params)
     @superpower.owner = current_user
-    @superpower_category = SuperpowerCategory.find(params[:superpower][:superpower_category_id])
-
-    @superpower.superpower_category = @superpower_category
     if @superpower.save
       redirect_to superpower_path(@superpower)
     else
@@ -37,7 +33,7 @@ class SuperpowersController < ApplicationController
   end
 
   def superpower_params
-    params.require(:superpower).permit(:name, :description, :superpower_category, :price, :image)
+    params.require(:superpower).permit(:name, :description, :superpower_category_id, :price, :image)
   end
 
 end
