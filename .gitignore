@@ -39,4 +39,9 @@ yarn-debug.log*
 # Ignore Mac and Linux file system files
 *.swp
 .DS_Store
-.env*
+
+# Ignore wip files
+/app/assets/images/demo_scr.jpg
+/app/assets/images/Preview_ava.jpeg
+/app/assets/images/Preview_ava.psd
+
