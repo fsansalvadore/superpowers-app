@@ -1,29 +1,30 @@
 class BookingsController < ApplicationController
-
-  def new
-  end
+  before_action :set_booking, only: [:edit, :update, :destroy]
 
   def create
-  end
-
-  def edit
-  end
-
-  def update
+    @superpower = Superpower.find(params[:superpower_id])
+    @booking = Booking.new(booking_params)
+    @booking.rentee = current_user
+    @booking.superpower_id = @superpower.id
+    if @booking.save
+      # TODO: Change to profile page
+      redirect_to superpower_path(@superpower), notice: "Booking successful"
+    else
+      render template: 'superpowers/show'
+    end
   end
 
   def destroy
+    # TODO: To be done when profile page has been created
   end
 
   private
 
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
+
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
   end
-
-   # t.date "start_date"
-   #  t.date "end_date"
-   #  t.bigint "superpower_id"
-   #  t.bigint "rentee_id"
-
 end

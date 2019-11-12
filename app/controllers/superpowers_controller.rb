@@ -8,6 +8,8 @@ class SuperpowersController < ApplicationController
 
   # GET /superpowers/1
   def show
+    # Needed to render the booking form on the superpower show page
+    @booking = Booking.new
   end
 
   # GET /superpowers/new
