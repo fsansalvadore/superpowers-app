@@ -3,6 +3,12 @@ puts "Destroying bookings..."
 Booking.destroy_all
 
 puts "Destroying superpowers..."
+
+puts "Deleting user uploaded photos from Cloudinary"
+Superpower.all.each do |superpower|
+  superpower.image.file.delete
+end
+
 Superpower.destroy_all
 
 puts "Destroying superpower categories..."
@@ -45,15 +51,15 @@ puts "Creating superpowers..."
     superpower_attributes << {
       name: "#{Faker::Superhero.power}",
       description: Faker::Lorem.paragraph(sentence_count: 4, supplemental: false, random_sentences_to_add: 4),
-      image: superpower_images[index],
       price: rand(100..1000)
     }
   end
 
-  superpower_attributes.each do |attribute|
+  superpower_attributes.each_with_index do |attribute, index|
     superpower = Superpower.new(attribute)
     superpower.owner = User.all.sample
     superpower.superpower_category = SuperpowerCategory.all.sample
+    superpower.remote_image_url = superpower_images[index]
     superpower.save!
   end
 puts "Finished creating superpowers..."
