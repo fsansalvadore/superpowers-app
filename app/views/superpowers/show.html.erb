@@ -15,12 +15,6 @@
 
 <h5>Book this superpower</h5>
 
-<%#= simple_form_for [@superpower, @booking] do |b| %>
-<%#= b.input :start_date, as: "string" %>
-<%#= f.input :number_of_days %>
-<%#= b.button :submit%>
-<%# end %>
-
-<%#= link_to "Book now", new_superpower_booking_path(@superpower) %>
+<%= render './bookings/form_new_booking' %>
 
 <%= link_to 'Back', superpowers_path %>
