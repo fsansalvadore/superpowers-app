@@ -3,6 +3,7 @@ class Booking < ApplicationRecord
   belongs_to :rentee, class_name: 'User'
   validates :start_date, :end_date, presence: true
   validate :test_end_date_versus_start_date
+  validates :price, presence: true
 
   private
 
@@ -13,3 +14,4 @@ class Booking < ApplicationRecord
     end
   end
 end
+

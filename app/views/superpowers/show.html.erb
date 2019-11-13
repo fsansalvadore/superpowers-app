@@ -1,20 +1,23 @@
-<h3><%= @superpower.name %></h3>
+  <%= link_to 'Back', superpowers_path %>
+<div class="container" id="show-content">
+  <div class="show-left-container">
+    <h3><%= @superpower.name %></h3>
 
-<p><%= @superpower.description %></p>
+    <p><%= @superpower.description %></p>
 
-<p>Owner first name: <%= @superpower.owner.first_name %></p>
-<p>Owner last name: <%= @superpower.owner.last_name %></p>
+    <p>Owner first name: <%= @superpower.owner.first_name %></p>
+    <p>Owner last name: <%= @superpower.owner.last_name %></p>
 
-<p>Price: <%= @superpower.price %> DKK a day</p>
+    <p>Price: <%= @superpower.price %> DKK a day</p>
 
-<p>Superpower type: <%= @superpower.superpower_category.name %></p>
+    <p>Superpower type: <%= @superpower.superpower_category.name %></p>
 
-<p>Superpower icon: <%= cl_image_tag @superpower.superpower_category.icon %></p>
+    <p>Superpower icon: <%= cl_image_tag @superpower.superpower_category.icon %></p>
 
-<%= cl_image_tag @superpower.image %>
+    <%= cl_image_tag @superpower.image %>
+  </div>
+  <div class="show-right-container">
+    <%= render './bookings/form_new_booking' %>
 
-<h5>Book this superpower</h5>
-
-<%= render './bookings/form_new_booking' %>
-
-<%= link_to 'Back', superpowers_path %>
+  </div>
+</div>

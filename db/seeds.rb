@@ -73,7 +73,8 @@ puts "Creating bookings..."
   10.times do
     booking_attributes << {
       start_date: Faker::Date.between(from: 10.days.ago, to: 10.days.from_now),
-      end_date: Faker::Date.between(from: 11.days.from_now, to: 20.days.from_now)
+      end_date: Faker::Date.between(from: 11.days.from_now, to: 20.days.from_now),
+      price: 100
     }
   end
 
