@@ -19,8 +19,5 @@ flatpickr(".datepicker", {
           daysDisplay.innerText = daysLengthTotal;
           priceDisplay.innerText = total;
           totalPriceForm.value = total;
-          console.log("Booking: " + typeof bookingPrice);
-          console.log(total);
-          console.log(typeof daysLengthTotal);
         }
 })
