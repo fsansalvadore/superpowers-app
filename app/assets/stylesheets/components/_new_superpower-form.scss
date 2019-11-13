@@ -1,0 +1,38 @@
+#new_superpower {
+  width: 600px;
+  padding: 30px;
+  background-color: #0E1A61;
+  border-radius: 10px;
+  color: white;
+
+  #booking-btn {
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 4px 0 4px rgba(0, 0, 0, 0.25);
+  }
+  h5 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+  // .booking-price-container {
+  //   display: flex;
+  //   width: 100%;
+  //   height: 80px;
+  //   align-items: center;
+  //   font-weight: bold;
+  //   p {
+  //     width: 50%;
+  //   }
+  //   .booking-form-price {
+  //     font-size: 24px;
+  //     color: $main-color;
+  //   }
+  //   .booking-days {
+  //     text-align: right;
+  //   }
+  // }
+}
