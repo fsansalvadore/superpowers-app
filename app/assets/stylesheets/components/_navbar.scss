@@ -46,4 +46,10 @@
   margin: 0;
 }
 
-
+.main-btn:hover {
+  background-color: #E39E02;
+  color: white;
+  box-shadow: -1px 1px 0 rgba(253, 189, 46, 1);
+  transform: translate(1px, -1px);
+  text-decoration: none
+}
