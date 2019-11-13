@@ -1,4 +1,6 @@
 <%= simple_form_for @superpower do |f| %>
+   <h5>Add a superpower for rent</h5>
+
    <% if @superpower.errors.any? %>
     <div class="errors-container">
       <ul>
@@ -8,11 +10,11 @@
       </ul>
     </div>
   <% end %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.association :superpower_category %>
-  <%= f.input :price %>
-  <%= f.input :image %>
+  <%= f.input :name, label: "What is the name of the superpower?" %>
+  <%= f.input :description, label: "Make your superpower stand out with a description", :as => :text, :input_html => {:rows => 3} %>
+  <%= f.association :superpower_category, label: "Which category best describes the superpower?" %>
+  <%= f.input :price, label: "How much are you charging for your superpower in EUR?" %>
+  <%= f.input :image, label: "Pick a main image for the superpower" %>
   <%= f.input :image_cache, as: :hidden %>
-  <%= f.submit 'Create superpower', class: 'btn btn-primary' %>
+  <%= f.submit 'Create superpower', class: 'btn btn-primary',  id: 'booking-btn' %>
 <% end %>
