@@ -1,0 +1,14 @@
+<%= simple_form_for [@superpower, @booking] do |f| %>
+   <% if @booking.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @booking.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.submit 'Create booking', class: 'btn btn-primary' %>
+<% end %>

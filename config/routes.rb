@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   root to: 'superpowers#index'
 
   resources :superpowers, only: [:index, :show, :new, :create ] do
-    resources :bookings, only: [:new, :create, :update]
+    resources :bookings, only: [:new, :create]
   end
+  resources :bookings, only: [:edit, :update, :destroy]
 
-  get '/profile', to: 'users#show', as: 'profile'
+  get '/profile', to: 'dashboards#show', as: 'profile'
   get "design", to: "pages#design"
 
 end

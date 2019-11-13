@@ -1,11 +1,12 @@
 <h1>SUPER HOME PAGE 🤟</h1>
 
 
-<% if !@superpowers.empty? %>
+      <% if !@superpowers.empty? %>
   <ul>
     <% @superpowers.each do |superpower| %>
       <li>Superpower id: <%= superpower.id %> | Name: <%= !superpower.name.nil? ? superpower.name : 'n/a' %>
         <%= link_to "View", superpower_path(superpower)  %>
+        <%= render "superpowers/partials/card", :superpower => superpower%>
 
       </li>
     <% end %>
@@ -13,3 +14,10 @@
 <% else %>
   <p>No Superpowers in the DB</p>
 <% end %>
+
+    </div>
+
+  </div>
+
+</div>
+
