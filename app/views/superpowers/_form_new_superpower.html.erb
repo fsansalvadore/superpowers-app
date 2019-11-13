@@ -1,5 +1,5 @@
 <%= simple_form_for @superpower do |f| %>
-   <h3>Add a superpower for rent</h3>
+   <h5>Add a superpower for rent</h5>
 
    <% if @superpower.errors.any? %>
     <div class="errors-container">
@@ -16,5 +16,5 @@
   <%= f.input :price, label: "How much are you charging for your superpower in EUR?" %>
   <%= f.input :image, label: "Pick a main image for the superpower" %>
   <%= f.input :image_cache, as: :hidden %>
-  <%= f.submit 'Create superpower', id: 'booking-btn' %>
+  <%= f.submit 'Create superpower', class: 'btn btn-primary',  id: 'booking-btn' %>
 <% end %>
