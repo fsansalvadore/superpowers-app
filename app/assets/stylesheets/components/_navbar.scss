@@ -26,6 +26,9 @@
 .right-nav-container {
   display: flex;
   align-items: center;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
 }
 
 #login-btn {
@@ -40,6 +43,7 @@
 
 .login-name-text {
   color:#FDBD2E;
+  margin: 0;
 }
 
 
