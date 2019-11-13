@@ -22,7 +22,7 @@ class SuperpowersController < ApplicationController
     @superpower = Superpower.new(superpower_params)
     @superpower.owner = current_user
     if @superpower.save
-      redirect_to superpower_path(@superpower)
+      redirect_to profile_path, notice: "Superpower successfully created"
     else
       render :new
     end
