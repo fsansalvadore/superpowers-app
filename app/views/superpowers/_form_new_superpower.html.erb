@@ -13,7 +13,7 @@
   <%= f.input :name, label: "What is the name of the superpower?" %>
   <%= f.input :description, label: "Make your superpower stand out with a description", :as => :text, :input_html => {:rows => 3} %>
   <%= f.association :superpower_category, label: "Which category best describes the superpower?" %>
-  <%= f.input :price, label: "How much are you charging for your superpower in EUR?" %>
+  <%= f.input :price, label: "How much are you charging for your superpower in DKK?" %>
   <%= f.input :image, label: "Pick a main image for the superpower" %>
   <%= f.input :image_cache, as: :hidden %>
   <%= f.submit 'Create superpower', class: 'btn btn-primary',  id: 'booking-btn' %>
