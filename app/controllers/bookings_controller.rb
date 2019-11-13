@@ -2,9 +2,10 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:edit, :update, :destroy]
 
   def create
+    @superpower = Superpower.find(params[:superpower_id])
     @booking = Booking.new(booking_params)
     @booking.rentee = current_user
-    @booking.superpower_id = params[:superpower_id]
+    @booking.superpower_id = @superpower.id
     if @booking.save
       redirect_to profile_path, notice: "Booking successful"
     else
@@ -13,7 +14,8 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    # TODO: To be done when profile page has been created
+    @booking.destroy
+    redirect_to profile_path, notice: "Booking successfully cancelled"
   end
 
   private
