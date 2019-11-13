@@ -47,6 +47,7 @@
   margin: 0;
   margin-right: 20px;
   margin-bottom: 0;
+  font-weight: bolder;
 }
 
 .main-btn:hover {
@@ -56,3 +57,13 @@
   transform: translate(1px, -1px);
   text-decoration: none
 }
+
+.login-avatar {
+  display: block;
+  margin: 0 auto;
+  height: 40px;
+  width: 40px;
+  vertical-align: middle;
+  border-style: none;
+}
+
