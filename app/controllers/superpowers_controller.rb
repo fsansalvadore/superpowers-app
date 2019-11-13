@@ -30,12 +30,8 @@ class SuperpowersController < ApplicationController
 
   def destroy
     @superpower = Superpower.find(params[:id])
-    if @superpower.bookings.empty?
-      @superpower.destroy
-      redirect_to profile_path, notice: "Superpower successfully deleted"
-    else
-      redirect_to profile_path, alert: "Cannot delete superpower as it has at least one booking"
-    end
+    @superpower.destroy
+    redirect_to profile_path, notice: "Superpower successfully deleted incl. any associated bookings"
   end
 
   private

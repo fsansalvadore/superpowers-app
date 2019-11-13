@@ -1,7 +1,7 @@
 <div class="card-container">
-  <div class="card-img" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%), url('https://www.placecage.com/g/155/300')">
+  <div class="card-img" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%), url('<%= superpower.image %>')">
      <div class="category-container">
-        <%= image_tag ("categories/fingering.png") %>
+        <%= image_tag("categories/#{superpower.superpower_category.icon}") %>
        <p> <%= superpower.superpower_category.name %>  </p>
     </div>
     <div class="card-price">

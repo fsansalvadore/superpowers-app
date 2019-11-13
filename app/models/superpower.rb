@@ -1,7 +1,7 @@
 class Superpower < ApplicationRecord
   belongs_to :owner, class_name: 'User'
   belongs_to :superpower_category
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
 
   validates :name, :description, :image, :price, presence: true
   validates :name, uniqueness: true

@@ -1,4 +1,6 @@
 <%= simple_form_for [@superpower, @booking] do |f| %>
+  <h5>Book this superpower</h5>
+
    <% if @booking.errors.any? %>
     <div class="errors-container">
       <ul>
@@ -8,7 +10,19 @@
       </ul>
     </div>
   <% end %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit 'Create booking', class: 'btn btn-primary' %>
+  <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+  <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+  <div class="booking-price-container">
+    <p class="booking-form-price"><%= @superpower.price %> DKK</p>
+    <p class="booking-days">for <span id="days-display"></span> days</p>
+  </div>
+  <hr>
+  <div class="total-amount-container">
+    <p id="total-booking-price"><span id="price-display">000</span> DKK</p>
+  </div>
+  <%= f.input :price, :as => :hidden, :input_html => { :value => @superpower.price, data: {
+    price: @superpower.price
+  }} %>
+  <%= f.submit "Book #{@superpower.name}", class: 'btn btn-primary', id: 'booking-btn' do %>
+  <% end %>
 <% end %>
