@@ -1,0 +1,29 @@
+.container {
+  padding: 15px;
+}
+
+.banner-container {
+  padding: 70px;
+
+}
+
+.banner-image {
+  width: 100%;
+  height: 198px;
+  background-color: #0E1A61;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-text h1 {
+  color: #FDBD2E;
+  font-family: 'Carter One', cursive;
+  font-size: 40px;
+}
+

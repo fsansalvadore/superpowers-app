@@ -5,6 +5,7 @@
   <% @superpowers.each do |superpower| %>
     <li>
       <%= link_to superpower.name, superpower_path(superpower)  %>
+      <%= link_to "Remove superpower", superpower_path(superpower), method: :delete  %>
     </li>
   <% end %>
 </ul>
@@ -19,6 +20,7 @@
       From: <%= booking.start_date %>
       To: <%= booking.end_date %>
       Price: <%= booking.price %> DKK
+      <%= link_to "Cancel booking", booking_path(booking), method: :delete %>
     </li>
   <% end %>
 </ul>

@@ -19,16 +19,16 @@ User.destroy_all
 
 #Creating entries
 puts "Creating superpower categories..."
-  SuperpowerCategory.create!(name: "Enhance", icon: "enhance.png")
-  SuperpowerCategory.create!(name: "Speed", icon: "speed.png")
-  SuperpowerCategory.create!(name: "X-ray vision", icon: "x-ray.png")
-  SuperpowerCategory.create!(name: "Speedy fingers", icon: "speedy_fingers.png")
-  SuperpowerCategory.create!(name: "Teleportation", icon: "teleportation.png")
-  SuperpowerCategory.create!(name: "Temporal manipulation", icon: "temporal_manipulation.png")
-  SuperpowerCategory.create!(name: "Super intelligence", icon: "super_intelligence.png")
-  SuperpowerCategory.create!(name: "Mind control", icon: "mind_control.png")
-  SuperpowerCategory.create!(name: "Time travel", icon: "time_travel.png")
-  SuperpowerCategory.create!(name: "Immortality", icon: "immortality.png")
+  SuperpowerCategory.create!(name: "Enhance", icon: "perceptionEnhancement.png")
+  SuperpowerCategory.create!(name: "Speed", icon: "stealth.png")
+  SuperpowerCategory.create!(name: "X-ray vision", icon: "visionEmpowerment.png")
+  SuperpowerCategory.create!(name: "Speedy fingers", icon: "fingering.png")
+  SuperpowerCategory.create!(name: "Teleportation", icon: "timeDeformation.png")
+  SuperpowerCategory.create!(name: "Temporal manipulation", icon: "brainActivity.png")
+  SuperpowerCategory.create!(name: "Super intelligence", icon: "brainActivity.png")
+  SuperpowerCategory.create!(name: "Mind control", icon: "personalityControll.png")
+  SuperpowerCategory.create!(name: "Time travel", icon: "timeDeformation.png")
+  SuperpowerCategory.create!(name: "Immortality", icon: "strength.png")
 puts "Finished creating superpower categories..."
 
 puts "Creating users..."

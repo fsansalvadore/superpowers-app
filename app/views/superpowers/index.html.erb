@@ -1,23 +1,29 @@
-<h1>SUPER HOME PAGE 🤟</h1>
 
+<div class="banner-container">
+  <div class="banner-image">
+    <div class="banner-text">
+      <h1>Superpower app banner</h1>
+    </div>
+  </div>
+</div>
 
+    <div class="container">
       <% if !@superpowers.empty? %>
-  <ul>
-    <% @superpowers.each do |superpower| %>
-      <li>Superpower id: <%= superpower.id %> | Name: <%= !superpower.name.nil? ? superpower.name : 'n/a' %>
-        <%= link_to "View", superpower_path(superpower)  %>
-        <%= render "superpowers/partials/card", :superpower => superpower%>
+        <div class="row">
+        <% @superpowers.each do |superpower| %>
+            <div class="col-4 mb-4 ">
+              <%= link_to superpower_path(superpower) do %>
+              <%= render "superpowers/partials/card", :superpower => superpower%>
+              <% end %>
+            </div>
+          <% end %>
 
-      </li>
-    <% end %>
-  </ul>
 <% else %>
   <p>No Superpowers in the DB</p>
-<% end %>
 
+      </div>
     </div>
 
-  </div>
+    <% end %>
 
-</div>
 
