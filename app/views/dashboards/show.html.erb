@@ -1,28 +1,32 @@
-<div class="show-container">
-<h1>My Dashboard</h1>
+<div id="my_dashboard" class="container d-flex flex-column border mt-5">
+  
+  <div>
+  <h5>My superpowers</h5>
+    <ul>
+      <% @superpowers.each do |superpower| %>
+        <li>
+          <%= link_to superpower.name, superpower_path(superpower)  %>
+          <%= link_to "Remove superpower", superpower_path(superpower), method: :delete  %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 
-<h5>My superpowers</h5>
-<ul>
-  <% @superpowers.each do |superpower| %>
-    <li>
-      <%= link_to superpower.name, superpower_path(superpower)  %>
-      <%= link_to "Remove superpower", superpower_path(superpower), method: :delete  %>
-    </li>
-  <% end %>
-</ul>
+  <hr>
 
-<hr>
+  <div>
+    <h5>My booked superpowers</h5>
+    <ul>
+      <% @bookings.each do |booking| %>
+       <li>
+          <%= link_to booking.superpower.name, superpower_path(booking.superpower_id)  %>
+          From: <%= booking.start_date %>
+          To: <%= booking.end_date %>
+          Price: <%= booking.price %> DKK
+          <%= link_to "Cancel booking", booking_path(booking), method: :delete %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 
-<h5>My booked superpowers</h5>
-<ul>
-  <% @bookings.each do |booking| %>
-   <li>
-      <%= link_to booking.superpower.name, superpower_path(booking.superpower_id)  %>
-      From: <%= booking.start_date %>
-      To: <%= booking.end_date %>
-      Price: <%= booking.price %> DKK
-      <%= link_to "Cancel booking", booking_path(booking), method: :delete %>
-    </li>
-  <% end %>
-</ul>
 </div>
