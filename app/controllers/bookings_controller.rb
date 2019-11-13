@@ -2,13 +2,11 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:edit, :update, :destroy]
 
   def create
-    @superpower = Superpower.find(params[:superpower_id])
     @booking = Booking.new(booking_params)
     @booking.rentee = current_user
-    @booking.superpower_id = @superpower.id
+    @booking.superpower_id = params[:superpower_id]
     if @booking.save
-      # TODO: Change to profile page
-      redirect_to superpower_path(@superpower), notice: "Booking successful"
+      redirect_to profile_path, notice: "Booking successful"
     else
       render template: 'superpowers/show'
     end
