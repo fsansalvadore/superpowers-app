@@ -19,6 +19,7 @@
       <%= link_to booking.superpower.name, superpower_path(booking.superpower_id)  %>
       From: <%= booking.start_date %>
       To: <%= booking.end_date %>
+      Price: <%= booking.price %> DKK
       <%= link_to "Cancel booking", booking_path(booking), method: :delete %>
     </li>
   <% end %>
