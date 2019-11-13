@@ -2,7 +2,7 @@
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs">
-       <h5>Log in</h5>
+      <h5>Log in</h5>
       <%= f.input :email,
                   required: false,
                   autofocus: true,
@@ -19,7 +19,5 @@
     <hr>
     <%= render "devise/shared/links" %>
   <% end %>
-
-
 
 </div>
