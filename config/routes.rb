@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:edit, :update, :destroy]
 
-  get '/profile', to: 'users#show', as: 'profile'
+  get '/profile', to: 'dashboards#show', as: 'profile'
   get "design", to: "pages#design"
 end
 
