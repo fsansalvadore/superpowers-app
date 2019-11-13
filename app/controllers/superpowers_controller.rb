@@ -28,6 +28,16 @@ class SuperpowersController < ApplicationController
     end
   end
 
+  def destroy
+    @superpower = Superpower.find(params[:id])
+    if @superpower.bookings.empty?
+      @superpower.destroy
+      redirect_to profile_path, notice: "Superpower successfully deleted"
+    else
+      redirect_to profile_path, alert: "Cannot delete superpower as it has at least one booking"
+    end
+  end
+
   private
 
   def set_superpower
@@ -37,5 +47,4 @@ class SuperpowersController < ApplicationController
   def superpower_params
     params.require(:superpower).permit(:name, :description, :superpower_category_id, :price, :image)
   end
-
 end

@@ -13,7 +13,8 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    # TODO: To be done when profile page has been created
+    @booking.destroy
+    redirect_to profile_path, notice: "Booking successfully cancelled"
   end
 
   private
