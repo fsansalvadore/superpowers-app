@@ -1,11 +1,30 @@
 #show-content {
   display: flex;
+
+  .show-info {
+    padding: 30px;
+    color: white;
+  }
+
+  h2 {
+    color: $main-color;
+    font-size: 36px;
+  }
 }
 
 .show-left-container {
   flex: 1;
+  margin-right: 40px;
 }
 
 .show-right-container {
   width: 400px;
+}
+
+.show-img-container {
+  height: 220px;
+  width: 100%;
+  border-radius: 10px;
+  background-position: center;
+  background-size: cover;
 }
