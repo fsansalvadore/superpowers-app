@@ -1,4 +1,3 @@
-  <%= link_to 'Back', superpowers_path %>
 <div class="container" id="show-content">
   <div class="show-left-container">
     <div class="show-img-container" style="background-image: url(<%= @superpower.image %>);">
@@ -15,7 +14,7 @@
 
       <p>Superpower type: <%= @superpower.superpower_category.name %></p>
 
-      <p>Superpower icon: <%= cl_image_tag @superpower.superpower_category.icon %></p>
+      <p>Superpower icon: <%= image_tag("categories/#{@superpower.superpower_category.icon}") %></p>
     </div>
   </div>
   <div class="show-right-container">
