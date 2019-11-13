@@ -1,7 +1,7 @@
 
   <div class="navbar navbar-lewagon">
 
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
 
@@ -9,7 +9,7 @@
 
     <% if user_signed_in? %>
 
-      <%= link_to "Add a super power", new_user_registration_path, class: "main-btn" %>
+      <%= link_to "Add a super power", new_superpower_path, class: "main-btn" %>
 
       <p class="login-name-text"> <%= current_user.email %></p>
       <div class="nav-item dropdown">
