@@ -34,12 +34,18 @@
 #login-btn {
   border: 1px solid $main-color;
   color: $main-color;
+  margin-right: 20px;
+}
+
+#login-btn:hover {
+  color: #0E1A61;
+  text-decoration: none;
+  background-color: $main-color;
 }
 
 .main-btn {
   background-color: $main-color;
   color: white;
-  margin-right: 87px;
 }
 
 .login-name-text {
@@ -67,3 +73,6 @@
   border-style: none;
 }
 
+#add-a-superpower-btn {
+  margin-right: 87px;
+}
