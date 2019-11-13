@@ -10,3 +10,49 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar {
+  background: #0E1A61;
+}
+
+.right-nav-container a {
+  padding: 10px 30px;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 0px; //Changed from 13px to avoid hover to go beyond edge on box
+}
+
+.right-nav-container {
+  display: flex;
+  align-items: center;
+  // border-width: 1px;
+  // border-style: solid;
+  // border-color: black;
+}
+
+#login-btn {
+  border: 1px solid $main-color;
+  color: $main-color;
+}
+
+.main-btn {
+  background-color: $main-color;
+  color: white;
+  margin-right: 87px;
+}
+
+.login-name-text {
+  color:#FDBD2E;
+  margin: 0;
+  margin-right: 20px;
+  margin-bottom: 0;
+}
+
+.main-btn:hover {
+  background-color: #E39E02;
+  color: white;
+  box-shadow: -1px 1px 0 rgba(253, 189, 46, 1);
+  transform: translate(1px, -1px);
+  text-decoration: none
+}
