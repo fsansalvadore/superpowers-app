@@ -11,7 +11,7 @@
 
       <%= link_to "Add a super power", new_superpower_path, class: "main-btn", id: "add-a-superpower-btn" %>
 
-      <p class="login-name-text"> <%= current_user.email %></p>
+      <p class="login-name-text"> <%= current_user.first_name %></p>
       <div class="nav-item dropdown">
         <%= image_tag "login_avatar_placeholder.png", class: 'avatar dropdown-toggle', data: { toggle: 'dropdown' }, 'aria-haspopup': true, 'aria-expanded': false %>
 

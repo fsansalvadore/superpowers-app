@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :bookings, foreign_key: 'rentee_id'
   has_many :superpowers, foreign_key: 'owner_id'
 
+  validates :first_name, presence: true
 end

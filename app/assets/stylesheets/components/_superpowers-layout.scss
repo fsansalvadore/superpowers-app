@@ -1,9 +1,18 @@
-.container {
-  padding: 15px;
+.card-grid {
+  /* padding: 15px; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-column: 25px; */
+  grid-column-gap: 35px;
+  grid-row-gap: 68px;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .banner-container {
-  padding: 70px;
+  padding: 30px;
 
 }
 

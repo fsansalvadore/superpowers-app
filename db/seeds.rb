@@ -18,17 +18,23 @@ puts "Destroying users..."
 User.destroy_all
 
 #Creating entries
+superpower_categories = [
+  {name: "Speedy fingers", icon: "fingering.png"},
+  {name: "Immortality", icon: "immortality.png"},
+  {name: "Mind control", icon: "mind_control.png"},
+  {name: "Super IQ", icon: "super_intelligence.png"},
+  {name: "Time travel", icon: "time_travel.png"},
+  {name: "Teleportation", icon: "teleportation.png"},
+  {name: "Manipulate time", icon: "temp_manipulation.png"},
+  {name: "Perception", icon: "perception.png"},
+  {name: "X-ray vision", icon: "xray.png"},
+  {name: "Speed", icon: "speed.png"},
+]
+
 puts "Creating superpower categories..."
-  SuperpowerCategory.create!(name: "Enhance", icon: "perceptionEnhancement.png")
-  SuperpowerCategory.create!(name: "Speed", icon: "stealth.png")
-  SuperpowerCategory.create!(name: "X-ray vision", icon: "visionEmpowerment.png")
-  SuperpowerCategory.create!(name: "Speedy fingers", icon: "fingering.png")
-  SuperpowerCategory.create!(name: "Teleportation", icon: "timeDeformation.png")
-  SuperpowerCategory.create!(name: "Temporal manipulation", icon: "brainActivity.png")
-  SuperpowerCategory.create!(name: "Super intelligence", icon: "brainActivity.png")
-  SuperpowerCategory.create!(name: "Mind control", icon: "personalityControll.png")
-  SuperpowerCategory.create!(name: "Time travel", icon: "timeDeformation.png")
-  SuperpowerCategory.create!(name: "Immortality", icon: "strength.png")
+  superpower_categories.each do |category|
+    SuperpowerCategory.create!(category)
+  end
 puts "Finished creating superpower categories..."
 
 puts "Creating users..."
@@ -40,19 +46,48 @@ puts "Creating users..."
       password: Faker::String.random(length: [6, 12])
       )
   end
-  #C/P below to create your own user
+
+  # Creating custom users
   User.create!(email: "a@b.com", first_name: "Axel", last_name: "Abildtrup", password: "123456")
+  User.create!(email: "super@powers.com", first_name: "Jack", last_name: "Fitzsimons", password: "123456")
+  User.create!(email: "f.sansalvadore@gmail.com", first_name: "Francesco", last_name: "Sansalvadore", password: "123456")
+  User.create!(email: "lh@gmail.com", first_name: "Lars", last_name: "Houbak", password: "123456")
 
 puts "Finished creating users..."
 
 puts "Creating superpowers..."
-  superpower_images = ["https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1505224959304-f6daf7fd0559_dxpogr.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553358/superhero_app_seed/photo-1572883023704-baadd8d6a976_vdyimi.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1531259683007-016a7b628fc3_mbcijc.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1496850574977-a4607106a874_xykd4u.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1519741347686-c1e0aadf4611_mtmynp.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1551981878-4c70c3e64135_p2hjps.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1534445967719-8ae7b972b1a5_wu1fag.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1535648451240-482a0bbd6e02_o3zbez.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1569003339405-ea396a5a8a90_hlus2s.jpg", "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1534809027769-b00d750a6bac_c2sxba.jpg"]
+
+  superpower_names = [
+    "Improve your fingering",
+    "Super strength",
+    "Become the Joker",
+    "Become the Batman",
+    "Travel through time",
+    "Teleport with power woman",
+    "Manipulate time",
+    "See better underwater",
+    "X-ray vision",
+    "Spidey sense"
+  ]
+
+  superpower_images = [
+    "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1505224959304-f6daf7fd0559_dxpogr.jpg",
+    "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1519741347686-c1e0aadf4611_mtmynp.jpg",
+    "https://res.cloudinary.com/dueboq0he/image/upload/v1573745508/superhero_app_seed/joker_vgtdd9.jpg",
+    "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1531259683007-016a7b628fc3_mbcijc.jpg",
+    "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1496850574977-a4607106a874_xykd4u.jpg",
+    "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1551981878-4c70c3e64135_p2hjps.jpg",
+    "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1534445967719-8ae7b972b1a5_wu1fag.jpg",
+    "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1535648451240-482a0bbd6e02_o3zbez.jpg",
+    "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1569003339405-ea396a5a8a90_hlus2s.jpg",
+    "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1534809027769-b00d750a6bac_c2sxba.jpg"
+  ]
 
   superpower_attributes = []
 
   10.times do |index|
     superpower_attributes << {
-      name: "##{index} #{Faker::Superhero.power}",
+      name: superpower_names[index],
       description: Faker::Lorem.paragraph(sentence_count: 4, supplemental: false, random_sentences_to_add: 4),
       price: rand(100..1000)
     }
@@ -60,8 +95,14 @@ puts "Creating superpowers..."
 
   superpower_attributes.each_with_index do |attribute, index|
     superpower = Superpower.new(attribute)
-    superpower.owner = User.all.sample
-    superpower.superpower_category = SuperpowerCategory.all.sample
+    superpower.owner = [
+      User.where(email: "a@b.com")[0],
+      User.where(email: "super@powers.com")[0],
+      User.where(email: "f.sansalvadore@gmail.com")[0],
+      User.where(email: "lh@gmail.com")[0]
+    ].sample
+
+    superpower.superpower_category = SuperpowerCategory.where(name: superpower_categories[index][:name])[0]
     superpower.remote_image_url = superpower_images[index]
     superpower.save!
   end
@@ -80,7 +121,13 @@ puts "Creating bookings..."
 
   booking_attributes.each do |attribute|
     booking = Booking.new(attribute)
-    booking.rentee = User.all.sample
+    booking.rentee = [
+      User.where(email: "a@b.com")[0],
+      User.where(email: "super@powers.com")[0],
+      User.where(email: "f.sansalvadore@gmail.com")[0],
+      User.where(email: "lh@gmail.com")[0]
+    ].sample
+
     booking.superpower = Superpower.all.sample
     booking.save!
   end
