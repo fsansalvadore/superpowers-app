@@ -1,32 +1,39 @@
-<div id="my_dashboard" class="container d-flex flex-column border mt-5">
-  
-  <div>
-  <h5>My superpowers</h5>
-    <ul>
-      <% @superpowers.each do |superpower| %>
+<h1>Superhero dashboard</h1>
+
+<div id="my_dashboard" class="container border mt-5">
+
+  <div class="row">
+    <div class="col-5 offset-1">
+      <h5>My superpowers</h5>
+      <ul>
+        <% @superpowers.each do |superpower| %>
         <li>
-          <%= link_to superpower.name, superpower_path(superpower)  %>
-          <%= link_to "Remove superpower", superpower_path(superpower), method: :delete  %>
+          <%= link_to superpower.name, superpower_path(superpower), class: "dashboard-headline"  %>
+          <%= link_to "", superpower_path(superpower), method: :delete, class: "fas fa-trash-alt"  %>
         </li>
-      <% end %>
-    </ul>
-  </div>
-
-  <hr>
-
-  <div>
-    <h5>My booked superpowers</h5>
-    <ul>
-      <% @bookings.each do |booking| %>
-       <li>
-          <%= link_to booking.superpower.name, superpower_path(booking.superpower_id)  %>
-          From: <%= booking.start_date %>
-          To: <%= booking.end_date %>
-          Price: <%= booking.price %> DKK
-          <%= link_to "Cancel booking", booking_path(booking), method: :delete %>
+        <li>
+          <%= image_tag "categories/#{superpower.superpower_category.icon}", class: "category_image" %>
+          <%= superpower.superpower_category.name  %>
         </li>
-      <% end %>
-    </ul>
+        <li><%= superpower.price %> DKK per day</li>
+        <br>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-5">
+      <h5>My booked superpowers</h5>
+      <ul>
+        <% @bookings.each do |booking| %>
+        <li>
+          <%= link_to booking.superpower.name, superpower_path(booking.superpower_id), class: "dashboard-headline"  %>
+          <%= link_to "", booking_path(booking), method: :delete, class: "fas fa-trash-alt" %>
+        </li>
+        <li> Booking period: <%= booking.start_date %> - <%= booking.end_date %> </li>
+        <li> Total price: <%= booking.price %> DKK </li>
+        <br>
+        <% end %>
+      </ul>
+    </div>
   </div>
 
 </div>
