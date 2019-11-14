@@ -7,23 +7,25 @@
   </div>
 </div>
 
-    <div class="container">
-      <% if !@superpowers.empty? %>
-        <div class="row">
-        <% @superpowers.each do |superpower| %>
-            <div class="col-4 mb-4 ">
-              <%= link_to superpower_path(superpower) do %>
-              <%= render "superpowers/partials/card", :superpower => superpower%>
-              <% end %>
-            </div>
-          <% end %>
+<div class="container">
+  <% if !@superpowers.empty? %>
+    <div class="card-grid">
+      <% @superpowers.each do |superpower| %>
+        <%= link_to superpower_path(superpower) do %>
+          <%= render "superpowers/partials/card", :superpower => superpower%>
+      <% end %>
+    <% end %>
 
-<% else %>
-  <p>No Superpowers in the DB</p>
-
-      </div>
     </div>
 
-    <% end %>
+
+  <% else %>
+    <p>No Superpowers in the DB</p>
+
+
+  <% end %>
+</div>
+
+
 
 
