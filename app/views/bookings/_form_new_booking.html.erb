@@ -12,17 +12,27 @@
   <% end %>
   <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
   <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-  <div class="booking-price-container">
-    <p class="booking-form-price"><%= @superpower.price %> DKK</p>
-    <p class="booking-days">for <span id="days-display"></span> days</p>
-  </div>
-  <hr>
-  <div class="total-amount-container">
-    <p id="total-booking-price"><span id="price-display">000</span> DKK</p>
+  <div id="booking-calculator" class="invisible">
+    <div class="booking-price-container">
+      <p class="booking-form-price"><%= @superpower.price %> DKK / day</p>
+      <p class="booking-days">for <span id="days-display"></span> days</p>
+    </div>
+    <hr>
+    <div class="total-amount-container">
+      <p id="total-booking-price"><span id="price-display">000</span> DKK</p>
+    </div>
   </div>
   <%= f.input :price, :as => :hidden, :input_html => { :value => @superpower.price, data: {
     price: @superpower.price
   }} %>
-  <%= f.submit "Book #{@superpower.name}", class: 'btn btn-primary', id: 'booking-btn' do %>
+  <%= f.submit "Book #{@superpower.name}", :disabled => true, class: 'btn btn-primary', id: 'booking-btn' do %>
   <% end %>
+  <br>
+  <br>
+
+  <input type="checkbox" required>
+  <span class="eula-text">With great powers come <a href="#" data-toggle="modal" data-target="#exampleModalCenter">great responsibilities</a></span>
+
 <% end %>
+
+<%= render './bookings/modal_eula' %>
