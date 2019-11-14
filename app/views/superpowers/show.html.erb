@@ -1,24 +1,65 @@
-<div class="container" id="show-content">
-  <div class="show-left-container">
+  <div class="container" id="show-content">
+
+  <div class="show-left-container d-flex justify-content-center align-items-center flex-column">
+
     <div class="show-img-container" style="background-image: url(<%= @superpower.image %>);">
     </div>
-    <div class="show-info">
-      <h2><%= @superpower.name %></h2>
 
-      <p><%= @superpower.description %></p>
 
-      <p>Owner first name: <%= @superpower.owner.first_name %></p>
-      <p>Owner last name: <%= @superpower.owner.last_name %></p>
+    <div class="show-info-container">
+      <div class="show-info-header-container">
+        <p class="show-info-header-text"><%= @superpower.name %></p>
+        <p class="show-info-header-icon"><%= image_tag("categories/#{@superpower.superpower_category.icon}") %></p>
+      </div>
 
-      <p>Price: <%= @superpower.price %> DKK a day</p>
+      <div class="info-row" id="first-info-row">
+        <div class="show-info-icon">
+          <img src="/assets/show_info_icons/show_info_icon_name.png">
+          <div class="show-info-text-left">Name</div>
+        </div>
+        <div class="show-info-text-right">
+          <%= @superpower.owner.first_name %> <%= @superpower.owner.last_name %>
+        </div>
+      </div>
 
-      <p>Superpower type: <%= @superpower.superpower_category.name %></p>
+      <div class="info-row">
+        <div class="show-info-icon">
+          <img src="/assets/show_info_icons/show_info_icon_email.png">
+          <div class="show-info-text-left">E-mail</div>
+        </div>
+        <div class="show-info-text-right">
+          <%= @superpower.owner.email %>
+        </div>
+      </div>
 
-      <p>Superpower icon: <%= image_tag("categories/#{@superpower.superpower_category.icon}") %></p>
+      <div class="info-row">
+        <div class="show-info-icon">
+          <img src="/assets/show_info_icons/show_info_icon_category.png">
+          <div class="show-info-text-left">Superpower category</div>
+        </div>
+        <div class="show-info-text-right">
+          <%= @superpower.superpower_category.name %>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="show-info-icon">
+          <img src="/assets/show_info_icons/show_info_icon_price.png">
+          <div class="show-info-text-left">Price</div>
+        </div>
+        <div class="show-info-text-right">
+          <%= @superpower.price %> DKK a day
+        </div>
+      </div>
+      <div class="show-info-description">
+        <p><%= @superpower.description %></p>
+      </div>
     </div>
+
   </div>
+
   <div class="show-right-container">
     <%= render './bookings/form_new_booking' %>
-
   </div>
+
 </div>
