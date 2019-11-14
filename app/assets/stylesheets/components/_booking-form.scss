@@ -1,4 +1,4 @@
-#new_booking {
+#new_booking, #eula-modal {
   width: 400px;
   padding: 30px;
   background-color: #0E1A61;
@@ -46,7 +46,21 @@
     background-color: white;
     opacity: 0.5;
   }
+
+  .eula-text {
+    font-size: 14px;
+  }
 }
+
+#eula-modal {
+  border-radius: 10px;
+  background-color: #0E1A61;
+
+  .eula-cross {
+    color: white;
+  }
+}
+
 
 .total-amount-container {
   width: 100%;
@@ -63,4 +77,13 @@
   span {
     font-size: 40px;
   }
+}
+
+
+.invisible {
+  display: none;
+}
+
+.disabled {
+
 }
