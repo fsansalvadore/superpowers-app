@@ -11,7 +11,7 @@
   <% if !@superpowers.empty? %>
     <div class="card-grid">
       <% @superpowers.each do |superpower| %>
-        <%= link_to superpower_path(superpower) do %>
+        <%= link_to superpower_path(superpower), class: "card-link" do %>
           <%= render "superpowers/partials/card", :superpower => superpower%>
       <% end %>
     <% end %>
