@@ -1,6 +1,5 @@
 .landing-container {
   position: absolute;
-  // overflow: hidden;
   right: 0;
   left: 0;
   top: 0;
@@ -87,7 +86,7 @@
   position: absolute;
   width: 60%;
   transform: translateZ(250px);
-  bottom: 20%;
+  bottom: 10%;
   margin: 0 auto;
   left: 0;
   right: 0;
@@ -96,7 +95,13 @@
 }
 
 #stroke {
-  position: absolute;
+  // position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
   z-index: 240;
 }
 

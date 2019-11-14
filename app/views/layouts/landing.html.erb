@@ -8,6 +8,11 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_pack_tag 'application' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <style>
+      html, body {
+        overflow: hidden;
+      }
+    </style>
   </head>
   <body>
     <%= render 'shared/flashes' %>
