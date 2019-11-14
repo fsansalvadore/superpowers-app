@@ -10,9 +10,13 @@
 }
 
 .card-container:hover {
-  box-shadow: -10px 10px 0 rgba(253, 189, 46, 1);
-  transform: translate(10px, -10px);
+box-shadow: -10px 10px 0 rgba(253, 189, 46, 1);
+transform: translate(10px, -10px);
+text-decoration: none !important;
+}
 
+.card-container:hover .card-text h3 {
+text-decoration-color: green !important;
 }
 
 .card-img {
@@ -67,14 +71,6 @@ h3 {
   font-family: 'Carter One', cursive;
 }
 
-.category-container {
-  display: flex;
-  position: absolute;
-  bottom: 0;
-  color: white;
-  align-items: center;
-  padding: 0 0 15px 15px;
-
   img {
     height: 35px;
     width: 35px;
@@ -84,6 +80,130 @@ h3 {
   p {
     padding-left: 10px;
     margin: 0;
+
   }
+
+/* a.card-link {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+} */
+/* $animate: all 0.2s ease-in-out;
+
+ .text-hover {
+  transition: $animate;
+  position: relative;
+   &:before,
+  &:after {
+  content: "";
+  position: absolute;
+  transition: $animate;
+  transition-duration: 0.75s;
+  opacity: 0;
+  background-color: darken(yellow,5%);
+  }
+  &.hover-1 {
+  &:before,
+  &:after {
+  left: 0;
+  }
+ } */
+
+.category-container {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  color: white;
+  align-items: center;
+  padding: 0 0 15px 15px;
 }
 
+// #1
+
+.card-text-un {
+  display: block;
+}
+
+.card-text-un:after {
+  content: '';
+  width: 0px;
+  height: 4px;
+  display: block;
+  background: #FDBD2E;
+  transition: 300ms;
+}
+
+.card-text-un:hover:after {
+  width: 100%;
+}
+
+.card-container:hover .card-text-un:after {
+  width: 100%;
+}
+
+// TEST
+
+/* .test-un {
+  display: inline;
+}
+
+.test-un:after {
+  content: '';
+  width: 0px;
+  height: 4px;
+  display: inline;
+  background: #FDBD2E;
+  transition: 300ms;
+}
+
+.test-un:hover:after {
+  width: 100%;
+}
+
+.card-test-un {
+  display: inline;
+}
+
+.card-test-un:after {
+  content: '';
+  width: 0px;
+  height: 3px;
+  display: inline;
+  background: #FDBD2E;
+  transition: 300ms;
+}
+
+.card-container:hover .card-test-un:hover:after {
+  width: 100%; */
+// }
+
+ // #2
+
+/* .card-text-un {
+  display: inline;
+  transition: 200ms;
+  border-bottom: 4px solid transparent;
+}
+
+.card-text-un:hover {
+   display: inline;
+  border-color: #FDBD2E;
+
+} */
+
+// #3
+
+/* .card-text-un {
+    display: inline;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+}
+
+.card-text-un:hover, .card-text-un:focus {
+    background-size: 100% 2px;
+} */
