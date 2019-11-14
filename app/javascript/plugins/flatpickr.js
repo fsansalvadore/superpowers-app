@@ -5,9 +5,10 @@ import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
 const bookingCalculator = document.getElementById('booking-calculator');
 const bookingSubmit = document.getElementById('booking-btn');
 
-
 flatpickr(".datepicker", {
   altInput: true,
+  defaultDate: new Date(),
+  minDate: new Date(),
   plugins: [new rangePlugin({ input: "#booking_end_date"})],
   onChange: function(selectedDates, dateStr, instance) {
           console.log(`date picked`);
@@ -29,13 +30,14 @@ flatpickr(".datepicker", {
           if (selectedDates.length == 2) {
             bookingCalculator.classList.remove('invisible');
             bookingSubmit.removeAttribute("disabled");
+
           } else {
             bookingCalculator.classList.add('invisible');
             bookingSubmit.setAttribute("disabled", true);
           }
 
         }
-})
+});
 
 
 
