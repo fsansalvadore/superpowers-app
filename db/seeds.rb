@@ -20,15 +20,15 @@ User.destroy_all
 #Creating entries
 superpower_categories = [
   {name: "Speedy fingers", icon: "fingering.png"},
-  {name: "Super strength", icon: "strength.png"},
-  {name: "Mind control", icon: "personalityControll.png"},
-  {name: "Stealth", icon: "stealth.png"},
-  {name: "Time travel", icon: "timeDeformation.png"},
-  {name: "Teleportation", icon: "timeDeformation.png"},
-  {name: "Temporal manipulation", icon: "brainActivity.png"},
-  {name: "Enhance", icon: "perceptionEnhancement.png"},
-  {name: "X-ray vision", icon: "visionEmpowerment.png"},
-  {name: "Super intelligence", icon: "brainActivity.png"},
+  {name: "Immortality", icon: "immortality.png"},
+  {name: "Mind control", icon: "mind_control.png"},
+  {name: "Super IQ", icon: "super_intelligence.png"},
+  {name: "Time travel", icon: "time_travel.png"},
+  {name: "Teleportation", icon: "teleportation.png"},
+  {name: "Manipulate time", icon: "temp_manipulation.png"},
+  {name: "Perception", icon: "perception.png"},
+  {name: "X-ray vision", icon: "xray.png"},
+  {name: "Speed", icon: "speed.png"},
 ]
 
 puts "Creating superpower categories..."
@@ -73,7 +73,7 @@ puts "Creating superpowers..."
   superpower_images = [
     "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1505224959304-f6daf7fd0559_dxpogr.jpg",
     "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1519741347686-c1e0aadf4611_mtmynp.jpg",
-    "https://res.cloudinary.com/dueboq0he/image/upload/v1573553358/superhero_app_seed/photo-1572883023704-baadd8d6a976_vdyimi.jpg",
+    "https://res.cloudinary.com/dueboq0he/image/upload/v1573745508/superhero_app_seed/joker_vgtdd9.jpg",
     "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1531259683007-016a7b628fc3_mbcijc.jpg",
     "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1496850574977-a4607106a874_xykd4u.jpg",
     "https://res.cloudinary.com/dueboq0he/image/upload/v1573553357/superhero_app_seed/photo-1551981878-4c70c3e64135_p2hjps.jpg",
