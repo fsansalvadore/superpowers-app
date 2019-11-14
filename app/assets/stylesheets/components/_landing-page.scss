@@ -1,0 +1,120 @@
+.landing-container {
+  position: absolute;
+  // overflow: hidden;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+#landing-title-container {
+  position: absolute;
+  text-align: center;
+  top: 17%;
+  transform: translateZ(20px);
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    font-family: 'Carter One', cursive;
+    line-height: 3rem;
+    font-weight: bold;
+    font-size: 3.5rem !important;
+    color: $main-color;
+
+    span {
+      font-size: 22px;
+      letter-spacing: 4px;
+      font-weight: normal;
+    }
+  }
+
+  p {
+    color: white;
+    font-size: 24px;
+  }
+}
+
+#frank {
+  background-image: url("Frank.png");
+  left: 16%;
+  transform: scale(0.85) translateY(150px) translateZ(20px);
+}
+
+#lars {
+  background-image: url("Lars.png");
+  left: 28%;
+  transform: translateZ(200px) scale(1) translateY(50px);
+}
+
+#axel {
+  background-image: url("Axel.png");
+  right: 28%;
+  transform: translateZ(120px) scale(1) translateY(60px);
+}
+
+#jack {
+  background-image: url("Jack.png");
+  right: 16%;
+  transform: scale(0.8) translateY(130px) translateZ(50px);
+}
+
+#frank:hover, #lars:hover, #axel:hover, #jack:hover {
+  transform: translateZ(220px) scale(0.9) translateY(60px);
+}
+
+.superhero {
+  position: absolute;
+  bottom: 0;
+  width: 500px;
+  height: 700px;
+  z-index: 0;
+  transition: transform 0.1s ease;
+}
+
+.superhero:hover {
+  background-position: 500px 0;
+}
+
+#landing-cta-container {
+  position: absolute;
+  width: 60%;
+  transform: translateZ(250px);
+  bottom: 20%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+}
+
+#stroke {
+  position: absolute;
+  z-index: 240;
+}
+
+#landing-btn {
+  position: absolute;
+  margin: 0 auto;
+  padding: 12px 30px;
+  font-size: 22px;
+  font-weight: bold;
+  width: 400px;
+  left: 0;
+  right: 0;
+  z-index: 260;
+  box-shadow: 0 0 0 white;
+  transition: all 0.2s ease;
+}
+
+#landing-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 0 white;
+}

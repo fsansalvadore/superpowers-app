@@ -1,2 +1,19 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="landing-container" data-tilt data-tilt-perspective="5000">
+  <div id="landing-title-container">
+    <h1>Find your superpower within<br><span>- our website -</span></h1>
+    <p>We're the n.1 place where to sell and find<br>the most relevant and up-to-date superpowers in town.</p>
+  </div>
+  <div id="landing-cta-container">
+    <%= link_to "GIMME POWER", superpowers_path, class: "btn btn-primary", id: "landing-btn" %>
+    <%= image_tag "landing-stroke.svg", alt: "alttext", id: "stroke" %>
+  </div>
+  <div id="lars" class="superhero"></div>
+  <div id="jack" class="superhero"></div>
+  <div id="axel" class="superhero"></div>
+  <div id="frank" class="superhero"></div>
+  <div class="fullscreen-bg">
+      <video loop muted autoplay poster="https://res.cloudinary.com/dueboq0he/image/upload/v1573732170/bg_superpowers/bg_drammatic_wnjsmw.jpg" class="fullscreen-bg__video">
+          <source src="https://res.cloudinary.com/dueboq0he/video/upload/v1573732175/bg_superpowers/bg_drammatic_gkimsh.mp4" type="video/mp4">
+      </video>
+  </div>
+</div>
