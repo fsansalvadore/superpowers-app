@@ -63,7 +63,7 @@ puts "Creating superpowers..."
     "Become the Joker",
     "Become the Batman",
     "Travel through time",
-    "Teleport with power woman",
+    "Teleport with power",
     "Manipulate time",
     "See better underwater",
     "X-ray vision",
