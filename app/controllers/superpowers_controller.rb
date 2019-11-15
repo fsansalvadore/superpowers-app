@@ -3,7 +3,6 @@ class SuperpowersController < ApplicationController
 
   # GET /superpowers
   def index
-
     if params[:query].present?
 
       sql_query = " \
@@ -14,9 +13,8 @@ class SuperpowersController < ApplicationController
       @superpowers = Superpower.joins(:superpower_category).where(sql_query, query: "%#{params[:query]}%")
 
     else
-      @superpowers = Superpower.all
+      @superpowers = Superpower.all.reverse
     end
-
   end
 
   # GET /superpowers/1
