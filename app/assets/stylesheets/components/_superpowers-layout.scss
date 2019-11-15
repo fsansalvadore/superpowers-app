@@ -69,3 +69,32 @@
   z-index: -999;
 }
 
+.search-container{
+  margin: 0 30px 70px 30px;
+  width: 100%;
+  position: relative;
+  height: 50px;
+  display: inline-flex;
+  align-items: start;
+  justify-content: center;
+
+  form {
+    width: 100%;
+  }
+
+  .search-input {
+    padding: 14px;
+    width: 80%;
+    border-radius: 4px;
+  }
+
+  #search-btn {
+    padding: 14px 12px;
+    width: 17%;
+    height: 100%;
+    top: 0;
+    margin-left: 1%;
+    font-weight: bold;
+  }
+}
+
