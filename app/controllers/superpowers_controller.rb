@@ -3,7 +3,7 @@ class SuperpowersController < ApplicationController
 
   # GET /superpowers
   def index
-    @superpowers = Superpower.all
+    @superpowers = Superpower.all.reverse
   end
 
   # GET /superpowers/1
