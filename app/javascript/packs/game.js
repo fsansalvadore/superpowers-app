@@ -22,7 +22,7 @@ const settleGame = () => {
     score.insertAdjacentHTML('beforeend',"It's a tie!");
   }
 
-  },1000);
+  }, 1000);
 
 }
 
@@ -44,7 +44,7 @@ const gameInit = () => {
 
   setTimeout(() => {
     settleGame();
-  },2000);
+  },4000);
 
   setTimeout(() => {
     window.location.reload(true)
