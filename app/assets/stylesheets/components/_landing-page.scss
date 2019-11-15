@@ -42,25 +42,25 @@
 }
 
 #frank {
-  background-image: url("Frank.png");
+  background-image: asset-url("Frank.png");
   left: 16%;
   transform: scale(0.85) translateY(150px) translateZ(20px);
 }
 
 #lars {
-  background-image: url("Lars.png");
+  background-image: asset-url("Lars.png");
   left: 28%;
   transform: translateZ(200px) scale(1) translateY(50px);
 }
 
 #axel {
-  background-image: url("Axel.png");
+  background-image: asset-url("Axel.png");
   right: 28%;
   transform: translateZ(120px) scale(1) translateY(60px);
 }
 
 #jack {
-  background-image: url("Jack.png");
+  background-image: asset-url("Jack.png");
   right: 16%;
   transform: scale(0.8) translateY(130px) translateZ(50px);
 }
