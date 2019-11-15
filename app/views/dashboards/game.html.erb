@@ -1,0 +1,19 @@
+<div id="canvas" class="hidden">
+  <div id="battlescene">
+    <div id="left">
+      <%= cl_image_tag @superpower.image, width: 400, height: 300, crop: :fill %>
+      <div id="left-text">
+        <h3><%= @superpower.name %></h3>
+      </div>
+      </div>
+    <div id="right">
+      <%= cl_image_tag @opponent.image, width: 400, height: 300, crop: :fill %>
+      <div id="right-text">
+        <h3><%= @opponent.name %></h3>
+      </div>
+    </div>
+    <div id="vs-icon">
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,139 @@
+#canvas {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: transparent;
+  background-image: asset-url('bg_drammatic.jpg');
+  background-size: contain;
+  z-index: 10;
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+  #battlescene {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 20;
+
+    #left {
+      position: absolute;
+      height: 100%;
+      width: 0%;
+      left: 0;
+      top: 0;
+      background-color: transparent;
+      z-index: 30;
+      border-right: 2.5px solid black;
+    }
+
+    #right {
+      position: absolute;
+      height: 100%;
+      width: 0%;
+      right: 0;
+      top: 0;
+      background-color: transparent;
+      z-index: 30;
+      border-left: 2.5px solid black;
+    }
+
+    #vs-icon {
+      position: absolute;
+      background-image: asset-url('battlescene/vs.png');
+      background-size: contain;
+      height: 200px;
+      width: 200px;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      z-index: 40;
+      opacity: 0;
+    }
+
+    #left img {
+      position: absolute;
+      right: 0;
+      top: 20%;
+      bottom: 0;
+      margin: auto 0;
+      border-radius: 20px 0 0 20px;
+      border: 5px solid black;
+      border-right: none
+    }
+
+    #right img {
+      position: absolute;
+      left: 0;
+      top: -20%;
+      bottom: 0;
+      margin: auto 0;
+      border-radius: 0 20px 20px 0;
+      border: 5px solid black;
+      border-left: none
+    }
+  }
+}
+
+#left-text {
+  z-index: 100;
+  position: absolute;
+  color: white;
+  right: 10%;
+  top: 30%;
+  bottom: 0;
+  margin: auto 0;
+}
+
+#right-text {
+  z-index: 100;
+  position: absolute;
+  color: white;
+  left: 10%;
+  bottom: 0;
+  top: 65%;
+  margin: auto 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.rightHalfScreen {
+  animation: halfScreen 0.5s cubic-bezier(.75,.1,.39,1.43);
+  animation-fill-mode: forwards;
+}
+
+.leftHalfScreen {
+  animation: halfScreen 0.5s cubic-bezier(.75,.1,.39,1.43);
+  animation-fill-mode: forwards;
+}
+
+@keyframes halfScreen {
+  0%   { width: 0%; }
+  100% { width: 50%; }
+}
+
+.dropDown {
+  animation: dropDown 0.5s cubic-bezier(.75,.1,.39,1.43) 0.3s;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes dropDown {
+  0% {
+    transform: translateY(0%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(120%);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
