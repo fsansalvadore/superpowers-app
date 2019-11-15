@@ -3,7 +3,18 @@ class SuperpowersController < ApplicationController
 
   # GET /superpowers
   def index
-    @superpowers = Superpower.all
+    if params[:query].present?
+
+      sql_query = " \
+        superpowers.name ILIKE :query \
+        OR superpowers.description ILIKE :query \
+        OR superpower_categories.name ILIKE :query \
+      "
+      @superpowers = Superpower.joins(:superpower_category).where(sql_query, query: "%#{params[:query]}%")
+
+    else
+      @superpowers = Superpower.all.reverse
+    end
   end
 
   # GET /superpowers/1
@@ -41,6 +52,6 @@ class SuperpowersController < ApplicationController
   end
 
   def superpower_params
-    params.require(:superpower).permit(:name, :description, :superpower_category_id, :price, :image)
+    params.require(:superpower).permit(:name, :description, :superpower_category_id, :price, :image, :query)
   end
 end

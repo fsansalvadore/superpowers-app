@@ -7,8 +7,16 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+#wacky-logo {
+    position: absolute;
+    height: 60px;
+    width: 223px;
+    top: 14px;
+    background-image: asset-url("logo_WackyPowers.svg");
+}
+
+#wacky-logo:hover {
+    background-image: asset-url("logo_WackyPowers_hover.svg") !important;
 }
 
 .navbar {
@@ -26,9 +34,6 @@
 .right-nav-container {
   display: flex;
   align-items: center;
-  // border-width: 1px;
-  // border-style: solid;
-  // border-color: black;
 }
 
 #login-btn {
@@ -45,7 +50,7 @@
 
 .main-btn {
   background-color: $main-color;
-  color: white;
+  color: #142778;
 }
 
 .login-name-text {
@@ -58,7 +63,7 @@
 
 .main-btn:hover {
   background-color: #E39E02;
-  color: white;
+  color: #142778;
   box-shadow: -1px 1px 0 rgba(253, 189, 46, 1);
   transform: translate(1px, -1px);
   text-decoration: none

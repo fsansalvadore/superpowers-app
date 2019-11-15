@@ -1,4 +1,4 @@
-<div class="card-container">
+<div class="card-container" data-sound-url="<%= asset_path(superpower.get_sound_path)%>">
   <div class="card-img" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%), url('<%= superpower.image %>')">
      <div class="category-container">
         <%= image_tag("categories/#{superpower.superpower_category.icon}") %>
