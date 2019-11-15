@@ -9,6 +9,29 @@ class Superpower < ApplicationRecord
   validates_numericality_of :price, :greater_than => 0.0
 
   mount_uploader :image, PhotoUploader
+
+  # def self.search(search)
+  #   if search
+
+  #     sql_query = " \
+  #       superpower.name ILIKE :search \
+  #       OR superpower.description ILIKE :search \
+  #       OR superpower.superpower_category.name ILIKE :search \
+  #     "
+  #     superpower = Superpower.joins(:superpower_categories).where(sql_query, query: "%#{search}%")
+
+  #   if superpower
+  #     superpower
+
+  #     else
+  #       Superpower.all
+  #     end
+  #   else
+  #     Superpower.all
+  #   end
+  # end
+
+
   # mount_uploader :tumbnail, PhotoUploader
 
   # To be completed with a through relationship
