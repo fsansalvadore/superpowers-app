@@ -13,26 +13,59 @@
 .banner-container {
   width: 80%;
   margin: 0 auto;
-  margin-bottom: 60px;
+  margin: 60px auto;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 
 .banner-image {
+  position: relative;
   width: 100%;
   height: 198px;
   background-color: #0E1A61;
+  background-image: asset-url("bg_drammatic.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 10px;
   position: relative;
-  justify-content: center;
   display: flex;
-  justify-content: center;
   align-items: center;
+}
+
+#heroes-comp {
+  position: absolute;
+  width: 500px;
+  height: 400px;
+  right: 60px;
+  bottom: 0;
+  background-image: asset-url("heroes_comp.png");
+  background-size: 75%;
+  background-position: bottom;
+  background-repeat: no-repeat;
 }
 
 .banner-text h1 {
   color: #FDBD2E;
   font-family: 'Carter One', cursive;
   font-size: 40px;
+  padding-left: 60px;
+  text-shadow: 1px 3px 0 rgba(0, 0, 0, 0.6);
+}
+
+#index-bg {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  opacity: 0.7;
+  background-image:
+  linear-gradient(to top, rgba(20, 39, 120, 1) 0%, rgba(20, 39, 120, 0) 70%),
+  asset-url("bg_drammatic.jpg");
+  filter: blur(3px);
+  background-size: cover;
+  background-position: top;
+  z-index: -999;
 }
 

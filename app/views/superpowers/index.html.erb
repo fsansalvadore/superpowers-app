@@ -2,8 +2,9 @@
 <div class="banner-container">
   <div class="banner-image">
     <div class="banner-text">
-      <h1>Superpower app banner</h1>
+      <h1>What's your power<%=", #{current_user.first_name}" if current_user %>?</h1>
     </div>
+    <div id="heroes-comp"></div>
   </div>
 </div>
 
@@ -15,17 +16,13 @@
           <%= render "superpowers/partials/card", :superpower => superpower%>
       <% end %>
     <% end %>
-
     </div>
-
-
   <% else %>
     <p>No Superpowers in the DB</p>
-
-
   <% end %>
 </div>
 
+<div id="index-bg"></div>
 
 
 
