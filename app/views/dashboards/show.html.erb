@@ -10,6 +10,7 @@
         <li>
           <%= link_to superpower.name, superpower_path(superpower), class: "dashboard-headline"  %>
           <%= link_to "", superpower_path(superpower), method: :delete, class: "fas fa-trash-alt"  %>
+          <%= link_to "", game_path(superpower), class: "fas fa-gamepad"  %>
         </li>
         <li>
           <%= image_tag "categories/#{superpower.superpower_category.icon}", class: "category_image" %>
@@ -35,5 +36,4 @@
       </ul>
     </div>
   </div>
-
 </div>

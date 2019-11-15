@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [:destroy]
 
   get '/profile', to: 'dashboards#show', as: 'profile'
+  get '/game/:id/', to: 'dashboards#game', as: 'game'
   get "design", to: "pages#design"
 
 end
