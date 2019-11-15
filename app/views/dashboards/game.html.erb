@@ -4,12 +4,14 @@
       <%= cl_image_tag @superpower.image, width: 400, height: 300, crop: :fill %>
       <div id="left-text">
         <h3><%= @superpower.name %></h3>
+        <h3 class="text-right"><%= @superpower.owner.first_name %></h3>
       </div>
       </div>
     <div id="right">
       <%= cl_image_tag @opponent.image, width: 400, height: 300, crop: :fill %>
       <div id="right-text">
         <h3><%= @opponent.name %></h3>
+        <h3><%= @opponent.owner.first_name %></h3>
       </div>
     </div>
     <div id="vs-icon">
@@ -17,3 +19,15 @@
     </div>
   </div>
 </div>
+
+<div id="end-game-canvas">
+  <div id="score">
+
+  </div>
+</div>
+
+<%= javascript_pack_tag "game.js" %>
+
+
+
+
