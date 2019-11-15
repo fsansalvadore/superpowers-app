@@ -133,7 +133,7 @@
     opacity: 0;
   }
   100% {
-    transform: translateY(120%);
+    transform: translateY(calc((100vh / 2) - 100px));
     opacity: 1;
   }
 }
