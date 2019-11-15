@@ -14,4 +14,7 @@ class Superpower < ApplicationRecord
   # To be completed with a through relationship
   # has_many :users, through: :bookings, :foreign_key => 'rentee_id', :class_name => 'User'
   # has_many :users, :through => :bookings, :source => 'rentee'
+  def get_sound_path
+    superpower_category.get_sound
+  end
 end
